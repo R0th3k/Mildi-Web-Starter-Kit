@@ -1,0 +1,132 @@
+.divider{
+  display: block;
+  width: 100%;
+  @for $i from 1 through 7{
+      &.is-size-#{$i}{
+          height:#{$i}rem ;
+      }
+  }
+}
+
+.video-wrapper {
+  height: 0;
+  padding-bottom: 56.25%;
+  padding-top: 30px;
+  overflow: hidden;
+  position: relative;
+
+  embed,
+  iframe,
+  object {
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+  }
+}
+
+//text helpers
+$weight-sizes:100,300,400,500,600,700,800,900;
+
+@each $weight-size in $weight-sizes {
+  $i: index($weight-sizes, $weight-size);
+  .fw-#{$weight-size} {
+    font-weight: $weight-size!important;
+  }
+}
+@for $i from 8 through 128{
+  .fz-#{$i}{
+      font-size:#{$i}px!important;
+  }
+}
+
+$app-colors:(
+  0: ("blue", $blue),
+  2: ("indigo", $indigo),
+  3: ("purple", $purple),
+  4: ("pink", $pink),
+  5: ("red", $red),
+  6: ("orange", $orange),
+  7: ("yellow", $yellow),
+  8: ("green", $green),
+  9: ("teal", $teal),
+  10: ("cyan", $cyan),
+  11: ("silver", $silver),
+  12: ("primary", $primary),
+  13: ("secondary", $secondary),
+  14: ("success", $success),
+  15: ("info", $info),
+  16: ("warning", $warning),
+  17: ("danger", $danger),
+  18: ("light", $light),
+  19: ("dark", $dark),
+  
+);
+@each $name, $value in $app-colors {
+  .c-#{nth($value, 1)} {
+    color:nth($value, 2)!important;
+  }
+}
+@each $name, $value in $app-colors {
+  .bg-#{nth($value, 1)} {
+    background:nth($value, 2)!important;
+  }
+}
+.button{
+  @each $name, $value in $app-colors {
+    &.is-#{nth($value, 1)} {
+      background:nth($value, 2)!important;
+    }
+  }
+  i{
+    margin-right: .5rem;
+  }
+  
+}
+
+
+.tt-uppercase{
+  text-transform: uppercase!important;
+}
+.ta-center{
+  text-align: center;
+}
+.ts{
+  @include textShadow;
+}
+.d-flex{
+  display: flex!important;
+}
+.jc-center{
+  justify-content: center;
+}
+.ai-center{
+  align-items: center;
+}
+.fd-r{
+  flex-direction: row!important;
+}
+.fd-c{
+  flex-direction: column!important;
+}
+.ai-fs{
+  align-items: flex-start!important;
+}
+.is-fullwidth{
+  width: 100%!important;
+}
+.is-fullheight{
+  @include from($mobile){
+    height: 100vh!important;
+  }
+}
+
+.is-size-big{
+  @include from($tablet){
+    font-size: 5rem;
+  }
+  @include to($tablet){
+    font-size: 3rem;
+  }
+}

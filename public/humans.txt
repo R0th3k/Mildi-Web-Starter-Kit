@@ -1,0 +1,15 @@
+# humanstxt.org/
+# The humans responsible & technology colophon
+
+# TEAM
+
+    Hektor Peña - Desarrollo web - http://hektor.mx
+
+# THANKS
+
+    <name>
+
+# TECHNOLOGY COLOPHON
+
+    Sass, Pug, Gulp, Bootstrap 4, Browser sync
+    jQuery, Modernizr, Normalize.css

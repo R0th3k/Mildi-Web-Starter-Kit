@@ -1,0 +1,38 @@
+include ../_partials/variables
+block page
+doctype html
+html.no-js(lang=lang)
+    head
+        meta(charset='utf-8')
+        title #{title}
+        meta(name='keywords', content=siteKeywords)
+        meta(name='description', content=siteDescription)
+        meta(name='viewport', content='width=device-width, initial-scale=1')
+        meta(name='theme-color', content=themeColor)
+        meta(property='og:locale', content=locale)
+        meta(property='og:type', content='website')
+        meta(property='og:url', content='http://' + siteUri )
+        meta(property='og:site_name', content=siteName)
+        meta(property='og:title', content=siteName)
+        meta(property='og:description', content=siteDescription)
+        meta(property='og:image', content='http://' + siteUri + '/images/og-image.jpg')
+        meta(property='og:image:secure_url', content='https://' + siteUri + '/images/og-image.jpg')
+        link(rel='author', href='humans.txt')
+        link(rel='manifest', href='site.webmanifest')
+        link(rel='apple-touch-icon', href='images/icon.png')
+        link(rel='icon', type='image/png', href='images/icon.png')
+        link(rel='stylesheet' href='css/style.css'+version)
+        block header
+    body
+        //if lte IE 9
+            p.browserupgrade
+                | You are using an 
+                strong outdated
+                |  browser. Please 
+                a(href='https://browsehappy.com/') upgrade your browser
+                |  to improve your experience and security.
+
+    include ../_partials/navbar
+    block content
+    include ../_partials/footer
+    include ../_partials/scripts
