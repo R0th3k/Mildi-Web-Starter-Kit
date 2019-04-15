@@ -35,10 +35,19 @@ $weight-sizes:100,300,400,500,600,700,800,900;
     font-weight: $weight-size!important;
   }
 }
-@for $i from 8 through 128{
-  .fz-#{$i}{
-      font-size:#{$i}px!important;
-  }
+
+$n: 1;
+@while $n < 9 {
+    
+    @for $i from 0 through 9{
+ 
+     .fz-#{$n}-#{$i}{
+          font-size:  (#{$n} + '.' + #{$i}) + 'rem!important';
+      }  
+    
+    }//end for
+    
+    $n: $n + 1;
 }
 
 $app-colors:(
@@ -61,6 +70,7 @@ $app-colors:(
   17: ("danger", $danger),
   18: ("light", $light),
   19: ("dark", $dark),
+  20: ("white", white),
   
 );
 @each $name, $value in $app-colors {
