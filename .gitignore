@@ -4,3 +4,4 @@ node_modules
 *.thumb
 .DS_Store
 npm-debug.log
+prepros-6.config
