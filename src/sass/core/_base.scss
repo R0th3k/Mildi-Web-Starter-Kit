@@ -1,17 +1,4 @@
-*,
-figure {
-  box-sizing: border-box;
-  margin: 0;
-  outline: none;
-  padding: 0;
-  &:focus {
-    outline: none;
-  }
-}
-picture{
-  margin:0;
-  padding: 0;
-}
+
 ::-moz-selection { 
   color: white;
   background: $primary;
@@ -22,7 +9,7 @@ picture{
   background: $primary;
 }
 
-//placeholder input
+
 ::-webkit-input-placeholder { 
   color: $dark;
   opacity: 1 !important;
@@ -42,17 +29,14 @@ picture{
 
 //basic styles
 
-strong{
-  color:$primary;
+
+html {
+  scroll-behavior: smooth;
 }
-html, body{
-  height: 100%;
-  overflow-x: hidden;
-}
+
 body {
   background:white;
   font-family: $global-font;
-  overflow-x: hidden;
   position: relative;
   text-rendering: optimizeLegibility;
   min-width: 320px;
@@ -60,6 +44,7 @@ body {
   color:$gray-600;
   @include font($font-size-global); 
 }
+
 @for $i from 1 through 6{
   h#{$i}.title {
     color:black;
@@ -72,8 +57,24 @@ body {
     font-weight: 300;
   }
 }
+*,
+figure {
+  box-sizing: border-box;
+  margin: 0;
+  outline: none;
+  padding: 0;
+  &:focus {
+    outline: none;
+  }
+}
+picture{
+  margin:0;
+  padding: 0;
+}
+strong{
+  color:$primary;
+}
 
-//links
 a {
   color: $primary;
   &:hover {
