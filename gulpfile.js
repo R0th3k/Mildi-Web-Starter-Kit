@@ -6,7 +6,7 @@ var gulp = require('gulp'),
   data = require('gulp-data'),
   pug = require('gulp-pug'),
   prefix = require('gulp-autoprefixer'),
-  sass = require('gulp-sass'),
+  sass = require('gulp-dart-sass'),
   concat = require('gulp-concat'),
   uglify = require('gulp-uglify'),
   sourcemaps = require('gulp-sourcemaps'),
@@ -152,8 +152,7 @@ gulp.task('imagemin', function() {
               quality: 80
           })
       ])))
-      .pipe(gulp.dest(paths.img))
-      .pipe(notify({ message: 'The images have been optimized' }));
+      .pipe(gulp.dest(paths.img));
 });
 /**
  * Watch scss files for changes & recompile
@@ -162,7 +161,6 @@ gulp.task('imagemin', function() {
 gulp.task('watch', function () {
   gulp.watch(paths.sass + '**/*.scss', ['sass']);
   gulp.watch(paths.scripts + '*', ['minifyJs']);
-  gulp.watch(paths.images + '/**/*', ['imagemin']);
   gulp.watch('./src/**/*.pug', ['rebuild']);
 });
 
